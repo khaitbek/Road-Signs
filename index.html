@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <title> Exam - 5 || Road Signs</title>
+</head>
+
+<body>
+
+
+  <!-- ##### GREETING section ##### -->
+  <section class="greeting" id="greeting">
+    <div class="container">
+      <div class="greeting__wrapper">
+        <h1 class="greeting__title heading-100">Quiz App</h1>
+
+        <button class="btn greeting__btn btn-light" id="greetingBtn">Get started</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ##### CREDENTIALS section -->
+  <section class="credentials" id="credentials">
+    <div class="container">
+      <div class="credentials__wrapper">
+        <h2 class="credentials__title heading-100">Choose your credentials</h2>
+
+        <form class="credentials__form" id="credentialsForm">
+          <select class="credentials__select" name="user_level" id="gameDifficulty" aria-label="Choose the difficulty level">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <select class="credentials__select" name="user_time" id="gameDuration" aria-label="Choose the duration for your game">
+            <option value="3">3 min</option>
+            <option value="5">5 min</option>
+            <option value="8">8 min</option>
+          </select>
+          <button class="btn btn-danger credentials__btn" id="startGameBtn">Start</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- #### GAME section -->
+  <section class="game" id="game">
+    <div class="container">
+      <div class="game__wrapper">
+        <h2 class="game__title heading-100">Quiz App</h2>
+
+        <h3 class="game__question heading-200" id="currentQuestion">
+          Yo'l bering
+        </h3>
+
+        <p class="game__attempts" id="attempts">
+          5 attempts left
+        </p>
+
+        <ul class="game__list" id="gameList">
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- templates -->
+  <template id="gameTemplate">
+    <li class="game__item" id="gameItem">
+      <img class="game__img" id="gameImg" src="./images/signs/aholi_punkti.gif" width="150" height="150" alt="template image">
+    </li>
+  </template>
+
+  <!-- Kerakli Array shu fileda -->
+  <script src="./signs.js"></script>
+
+  <!-- Code yoziladigan js file shu -->
+  <script src="./main.js"></script>
+</body>
+
+</html>

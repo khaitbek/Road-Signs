@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root{
+    --ff-main:"Roboto";
+    --bg-main:#000;
+    --bg-secondary:#fff;
+    --bg-danger:crimson;
+    --bg-success:green;
+    --bg-gray:gray;
+    --text-dark:#000;
+    --text-danger:crimson;
+    --text-success:green;
+    --text-bg-main:#fff;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    font-family: "Roboto",sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-bg-main);
+}
+
+ul{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+.btn{
+    font-family: inherit;
+    font-size: 30px;
+    border: none;
+    color: var(--text-bg-main);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-light{
+    padding: 10px 20px;
+    font-size: 30px;
+    color: var(--text-dark);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color:var(--bg-secondary);
+}
+
+.btn-danger{
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: var(--bg-danger);
+}
+
+.btn-danger:hover{
+    color: var(--text-danger);
+    border-color: var(--bg-danger);
+    background-color: var(--bg-main);
+}
+
+.btn-light:hover{
+    border-color: var(--bg-secondary);
+    color: var(--bg-secondary);
+    background-color: var(--bg-main);
+}
+
+.greeting{
+    padding-top: 120px;
+}
+
+.greeting.close{
+    display: none;
+}
+
+.greeting__wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.heading-100{
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.heading-200{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: var(--text-danger);
+}
+
+@media screen and (min-width:576px){
+    .heading-100{
+        font-size: 60px;
+    }
+}
+
+@media screen and (min-width:968px){
+    .heading-100{
+        font-size: 80px;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .heading-100{
+        font-size: 100px;
+    }
+}
+
+/* credentials */
+.credentials{
+    display: none;
+    padding-top: 120px;
+}
+
+.credentials.close{
+    display: none;
+}
+
+.credentials.show{
+    display: block;
+}
+
+.credentials__wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.credentials__form{
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 6rem;
+}
+
+.credentials__select{
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--bg-secondary);
+}
+
+/* game */
+.game{
+    display: none;
+}
+.game.close{
+    display: none;
+}
+.game.start{
+    display: block;
+}
+.game__question{
+    margin-bottom: 5rem;
+    animation: textScale 3s ease-in-out infinite;
+}
+
+.game__attempts{
+    color: var(--text-bg-main);
+}
+
+.game__list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,250px));
+    place-content: center;
+    gap: 1rem;
+}
+
+.game__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    border-radius: 20px;
+    background-color: var(--bg-gray);
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.game__item.success{
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: var(--bg-success);
+}
+
+.game__item.fail{
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: var(--bg-danger);
+}
+
+.game__item.hidden{
+    opacity: 0;
+    pointer-events: 0;
+}
+
+.game__item img{
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+/* animations */
+/* @keyframes textScale{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+} */
