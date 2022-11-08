@@ -15,7 +15,7 @@
   <!-- ##### GREETING section ##### -->
   <section class="greeting" id="greeting">
     <div class="container">
-      <div class="greeting__wrapper">
+      <div class="greeting__wrapper grid-wrapper">
         <h1 class="greeting__title heading-100">Quiz App</h1>
 
         <button class="btn greeting__btn btn-light" id="greetingBtn">Get started</button>
@@ -27,9 +27,7 @@
   <!-- ##### CREDENTIALS section -->
   <section class="credentials" id="credentials">
     <div class="container">
-      <div class="credentials__wrapper">
-        <h2 class="credentials__title heading-100">Choose your credentials</h2>
-
+      <div class="credentials__wrapper grid-wrapper">
         <form class="credentials__form" id="credentialsForm">
           <select class="credentials__select" name="user_level" id="gameDifficulty" aria-label="Choose the difficulty level">
             <option value="easy">Easy</option>
@@ -55,13 +53,23 @@
       <div class="game__wrapper">
         <h2 class="game__title heading-100">Quiz App</h2>
 
-        <h3 class="game__question heading-200" id="currentQuestion">
-          Yo'l bering
-        </h3>
+        <div class="game__inner">
+          <h3 class="game__question heading-200" id="currentQuestion">
+            Yo'l bering
+          </h3>
+        </div>
 
-        <p class="game__attempts" id="attempts">
-          5 attempts left
-        </p>
+        <div class="game__inner">
+          <p class="game__attempts heading-300" id="attempts">
+            5 attempts left
+          </p>
+          <p class="game__score heading-300" id="gameScore">
+            Score: 0
+          </p>
+          <p class="game__duration heading-300" id="duration">
+            00:00
+          </p>
+        </div>
 
         <ul class="game__list" id="gameList">
           
@@ -70,6 +78,38 @@
     </div>
   </section>
 
+  <!-- #### VICTORY SECTION -->
+  <section class="victory" id="victorySection">
+    <div class="container">
+      <div class="victory__wrapper grid-wrapper">
+        <h2 class="victory__title heading-100">
+          You win!
+        </h2>
+
+        <h3 class="victory__title heading-200" id="finalScore">Your final score is </h3>
+
+        <button class="victory__btn btn restart-btn btn-light" id="restartBtn">
+          Restart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="game-over" id="gameOver">
+    <div class="container">
+      <div class="game-over__wrapper grid-wrapper">
+        <h2 class="game-over__title heading-100">
+          Game Over
+        </h2>
+        <p class="game-over__text heading-200" id="finalAttempts">
+          You have left 0 attempts
+        </p>
+        <button class="game-over__btn btn btn-light restart-btn" id="restartBtn">
+          Restart
+        </button>
+      </div>
+    </div>
+  </section>
   <!-- templates -->
   <template id="gameTemplate">
     <li class="game__item" id="gameItem">
