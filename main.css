@@ -4,12 +4,12 @@
     --ff-main: "Roboto";
     --bg-main: #000;
     --bg-secondary: #fff;
-    --bg-danger: crimson;
+    --bg-danger: #dc143c;
     --bg-success: green;
-    --bg-gray: gray;
+    --bg-gray: #808080;
     --text-dark: #000;
-    --text-danger: crimson;
-    --text-success: green;
+    --text-danger: #dc143c;
+    --text-success: #008000;  
     --text-bg-main: #fff;
 }
 
@@ -181,7 +181,12 @@ section.show {
     font-size: 20px;
     border: none;
     border-radius: 5px;
+    background-image: url("./images/arrow.png");
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: center right 10%;
     background-color: var(--bg-secondary);
+    appearance: none;
 }
 
 @media screen and (min-width:576px) {
@@ -194,6 +199,7 @@ section.show {
 /* game */
 .game {
     display: none;
+    padding-bottom: 200px;
 }
 
 .game__question {

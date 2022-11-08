@@ -24,7 +24,7 @@ const finalScore = document.querySelector("#finalScore");
 
 // GLOBAL VARIABLES
 const uniqueSigns = [];
-const previousQuestions = [];
+const previousQuestions = new Set();
 const SUCCESS_CLASS_NAME = "success";
 const FAIL_CLASS_NAME = "fail";
 
@@ -85,10 +85,10 @@ function getMinutesAndSeconds(interval) {
     }, 1000);
 }
 
-function getStarterMinutesAndSeconds(interval){
+function getStarterMinutesAndSeconds(interval) {
     const seconds = Math.floor(interval % 60);
     const minutes = Math.floor(interval / 60);
-    GameDurationText.textContent = minutesAndSecondsToString(seconds,minutes);
+    GameDurationText.textContent = minutesAndSecondsToString(seconds, minutes);
 }
 
 function minutesAndSecondsToString(seconds, minutes) {
@@ -127,7 +127,7 @@ function triggerSuccess(elem) {
     window.scrollTo(0, 300);
 }
 
-function updateScore(){
+function updateScore() {
     gameScore.textContent = `Score: ${score}`;
     finalScore.textContent = `Final score: ${score}`;
 }
@@ -150,7 +150,7 @@ function removeQuestion(index) {
     chooseRandomQuestion(uniqueSigns);
     setTimeout(() => {
         gameList.style.pointerEvents = "all";
-    }, 2500);
+    }, 500);
 }
 
 function showCredentials() {
@@ -176,11 +176,8 @@ function displaySection(section, classToAdd, classToRemove) {
 }
 
 function chooseRandomQuestion(questions) {
-    let randomNumber = Math.floor(Math.random()) * questions.length;
-    
-    while (previousQuestions.includes(randomNumber)) {
-        randomNumber = Math.floor(Math.random()) * questions.length;
-    }
+    let randomNumber = Math.floor(Math.random() * questions.length);
+    previousQuestions.add(randomNumber);
     if (!questions[randomNumber]) {
         return endGame("win");
     }
