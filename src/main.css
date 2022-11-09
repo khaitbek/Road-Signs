@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
@@ -16,7 +23,8 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html {
@@ -65,6 +73,7 @@ section.show {
 }
 
 .grid-wrapper {
+    display: -ms-grid;
     display: grid;
     place-items: center;
 }
@@ -76,6 +85,8 @@ section.show {
     color: var(--text-bg-main);
     background-color: transparent;
     cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
@@ -165,11 +176,13 @@ section.show {
 }
 
 .credentials.show{
+    display: -ms-grid;
     display: grid;
     place-items: center;
 }
 
 .credentials__form {
+    display: -ms-grid;
     display: grid;
     gap: 1rem;
     margin-bottom: 6rem;
@@ -181,12 +194,14 @@ section.show {
     font-size: 20px;
     border: none;
     border-radius: 5px;
-    background-image: url("./images/arrow.png");
+    background-image: url("../images/arrow.png");
     background-size: 22px;
     background-repeat: no-repeat;
     background-position: center right 10%;
     background-color: var(--bg-secondary);
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
 @media screen and (min-width:576px) {
@@ -208,7 +223,8 @@ section.show {
     font-size: 20px;
     color: var(--text-bg-main);
     background-color: var(--bg-danger);
-    animation: textScale 3s ease-in-out infinite;
+    -webkit-animation: textScale 3s ease-in-out infinite;
+            animation: textScale 3s ease-in-out infinite;
 }
 
 .game__attempts {
@@ -219,6 +235,7 @@ section.show {
 }
 
 .game__list {
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
     place-content: center;
@@ -226,13 +243,21 @@ section.show {
 }
 
 .game__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     padding: 0.2rem;
     border-radius: 20px;
     background-color: var(--bg-gray);
     cursor: pointer;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -273,9 +298,14 @@ section.show {
 
 @media screen and (min-width:576px) {
     .game__inner {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     .game__question {

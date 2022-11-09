@@ -159,6 +159,8 @@ function showCredentials() {
 
 function startGame() {
     closeSection(credentialSection, "close", "show");
+    closeSection(victorySection,"close","show");
+    closeSection(gameOverSection,"close","show");
     displaySection(gameSection, "show", "close");
     const symbols = getSignsByLevel(gameDifficulty.value);
     chooseRandomQuestion(symbols);
